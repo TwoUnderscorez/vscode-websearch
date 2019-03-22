@@ -6,6 +6,7 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 
 - Initial release
 - Added:
+  - Support for mac.
 - Changed:
 - Fixed:
 - Deprecated:
