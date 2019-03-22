@@ -13,5 +13,10 @@ if (ostype.includes('win')) {
         exec(`start https://${url}`);
     };
 }
+else if (ostype.includes('mac')) {
+    open_url = (url: string) => {
+        exec(`open https://${url}`);
+    };
+}
 
 export { open_url };
