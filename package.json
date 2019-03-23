@@ -21,6 +21,26 @@
 			}
 		]
 	},
+	"configuration": {
+		"title": "Web Search",
+		"type": "object",
+		"properties": {
+			"websearch.engines": {
+				"type": "dict",
+				"default": {
+					"DuckDuckGo": "duckduckgo.com/?q=",
+					"Google": "www.google.com/search?q=",
+					"Bing": "www.bing.com/search?q="
+				},
+				"description": "Search engine list and their URLs."
+			},
+			"websearch.default_engine": {
+				"type": "string",
+				"default": "DuckDuckGo",
+				"description": "The search engine to use."
+			}
+		}
+	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
