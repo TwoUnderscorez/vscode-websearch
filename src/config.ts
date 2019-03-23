@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 
 export class Config {
     searchEngines: Array<SearchEngine>;
-    searchEngine: string;
+    searchEngine: SearchEngine;
     constructor() {
         this.searchEngines = Array<SearchEngine>();
         this.searchEngines.push(
@@ -19,14 +19,25 @@ export class Config {
                 "URI": "www.bing.com/search?q="
             }
         );
-        this.searchEngine = "DuckDuckGo";
+        this.searchEngine = {
+            "Name": "DuckDuckGo",
+            "URI": "duckduckgo.com/?q="
+        };
     }
 
     loadConfig() {
         let config = vscode.workspace.getConfiguration("websearch");
 
         this.searchEngines = config.get<Array<SearchEngine>>("engines", this.searchEngines);
-        this.searchEngine = config.get<string>("default_engine", this.searchEngine);
+        let searchEngine = config.get<string>("default_engine");
+        // tslint:disable-next-line: triple-equals
+        if (searchEngine != null) {
+            this.searchEngines.forEach(element => {
+                if (element.Name === searchEngine) {
+                    this.searchEngine = element;
+                }
+            });
+        }
     }
 }
 

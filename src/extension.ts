@@ -10,13 +10,14 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const extconfig = new config.Config();
 	extconfig.loadConfig();
+
 	let disposable = vscode.commands.registerCommand('extension.websearch', () => {
 		// The code you place here will be executed every time your command is executed
 		let input = vscode.window.showInputBox();
 		input.then((result) => {
 			// tslint:disable-next-line: triple-equals
 			if (result != null) {
-				execute_search(result);
+				execute_search(result, extconfig);
 			}
 		});
 	});

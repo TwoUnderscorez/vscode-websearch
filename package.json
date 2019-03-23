@@ -41,7 +41,7 @@
 						"URI": "www.bing.com/search?q="
 					}
 				],
-				"description": "Search engine list and their URLs."
+				"description": "Search engine list and their URIs."
 			},
 			"websearch.default_engine": {
 				"type": "string",
