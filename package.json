@@ -26,12 +26,21 @@
 		"type": "object",
 		"properties": {
 			"websearch.engines": {
-				"type": "dict",
-				"default": {
-					"DuckDuckGo": "duckduckgo.com/?q=",
-					"Google": "www.google.com/search?q=",
-					"Bing": "www.bing.com/search?q="
-				},
+				"type": "list",
+				"default": [
+					{
+						"Name": "DuckDuckGo",
+						"URI": "duckduckgo.com/?q="
+					},
+					{
+						"Name": "Google",
+						"URI": "www.google.com/search?q="
+					},
+					{
+						"Name": "Bing",
+						"URI": "www.bing.com/search?q="
+					}
+				],
 				"description": "Search engine list and their URLs."
 			},
 			"websearch.default_engine": {
