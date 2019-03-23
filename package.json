@@ -10,17 +10,24 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.websearch"
+		"onCommand:websearch.search"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.websearch",
+				"command": "websearch.search",
 				"title": "Web search"
 			}
 		]
 	},
+	"keybindings": [
+		{
+			"command": "websearch.search",
+			"key": "alt+s",
+			"when": "editorTextFocus"
+		}
+	],
 	"configuration": {
 		"title": "Web Search",
 		"type": "object",
