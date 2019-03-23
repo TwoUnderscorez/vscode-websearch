@@ -19,10 +19,7 @@ export class Config {
                 "URI": "www.bing.com/search?q="
             }
         );
-        this.searchEngine = {
-            "Name": "DuckDuckGo",
-            "URI": "duckduckgo.com/?q="
-        };
+        this.searchEngine = this.searchEngines[0];
     }
 
     loadConfig() {
@@ -30,8 +27,7 @@ export class Config {
 
         this.searchEngines = config.get<Array<SearchEngine>>("engines", this.searchEngines);
         let searchEngine = config.get<string>("default_engine");
-        // tslint:disable-next-line: triple-equals
-        if (searchEngine != null) {
+        if (searchEngine !== undefined) {
             this.searchEngines.forEach(element => {
                 if (element.Name === searchEngine) {
                     this.searchEngine = element;

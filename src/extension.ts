@@ -15,8 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 		let input = vscode.window.showInputBox();
 		input.then((result) => {
-			// tslint:disable-next-line: triple-equals
-			if (result != null) {
+			if (result !== undefined) {
 				execute_search(result, extconfig);
 			}
 		});
