@@ -22,7 +22,12 @@ export function activate(context: vscode.ExtensionContext) {
 		});
 	});
 
+	vscode.workspace.onDidChangeConfiguration(function (event) {
+		extconfig.loadConfig();
+	});
+
 	context.subscriptions.push(disposable);
+	console.log('"vscode-websearch" activated!');
 }
 
 // this method is called when your extension is deactivated
