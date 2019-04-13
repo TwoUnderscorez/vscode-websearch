@@ -54,6 +54,11 @@
 				"type": "string",
 				"default": "DuckDuckGo",
 				"description": "The search engine to use."
+			},
+			"websearch.ac_engine": {
+				"type": "string",
+				"default": "DuckDuckGo",
+				"description": "The AutoComplete engine to use."
 			}
 		}
 	},
