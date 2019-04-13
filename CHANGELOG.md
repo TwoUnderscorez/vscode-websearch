@@ -8,6 +8,7 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 - Added:
   - Support for mac.
   - Multiple search engine support.
+  - Added AutoComplete functionality for Google and DuckDuckGo 
 - Changed:
 - Fixed:
 - Deprecated:
