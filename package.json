@@ -1,6 +1,10 @@
 {
 	"name": "vscode-websearch",
 	"publisher": "TwoUnderscorez",
+	"repository": {
+		"url": "https://github.com/TwoUnderscorez/vscode-websearch",
+		"type": "GitHub"
+	},
 	"displayName": "Web Search",
 	"description": "Search bar inside vscode",
 	"version": "1.0.0",
