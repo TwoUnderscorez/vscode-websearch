@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import { StrItem } from './StrItem';
 import { duckduckgo_ac, google_ac } from './autocomplete';
+import { SearchEngine } from "./SearchEngine";
 export class Config {
     searchEngines: Array<SearchEngine>;
     searchEngine: SearchEngine;
@@ -33,14 +34,14 @@ export class Config {
         let config = vscode.workspace.getConfiguration("websearch");
 
         this.searchEngines = config.get<Array<SearchEngine>>("engines", this.searchEngines);
-        let searchEngine = config.get<string>("default_engine");
-        if (searchEngine !== undefined) {
-            this.searchEngines.forEach(element => {
-                if (element.Name === searchEngine) {
-                    this.searchEngine = element;
-                }
-            });
-        }
+
+        let searchEngine = config.get<string>("default_engine", this.searchEngines[0].Name).toLowerCase();
+        this.searchEngines.forEach(element => {
+            if (element.Name.toLowerCase() === searchEngine) {
+                this.searchEngine = element;
+            }
+        });
+
         this.acEngine = config.get<string>("ac_engine", this.acEngine);
         switch (this.acEngine.toLowerCase()) {
             case 'duckduckgo':
@@ -57,7 +58,3 @@ export class Config {
     }
 }
 
-export interface SearchEngine {
-    Name: string;
-    URI: string;
-}

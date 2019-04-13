@@ -25,7 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
 		input.onDidChangeValue(value => {
 			get_suggestions(value, input, extconfig);
 		});
-		input.title = `Search ${extconfig.searchEngine.Name}`;
+		input.title = `Search ${extconfig.searchEngine.Name.toString()}`;
 		input.placeholder = 'Start typing to search';
 		input.onDidHide(() => input.dispose());
 		input.show();
