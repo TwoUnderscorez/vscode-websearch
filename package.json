@@ -1,13 +1,8 @@
 {
 	"name": "vscode-websearch",
-	"publisher": "TwoUnderscorez",
-	"repository": {
-		"url": "https://github.com/TwoUnderscorez/vscode-websearch",
-		"type": "GitHub"
-	},
 	"displayName": "Web Search",
 	"description": "Search bar inside vscode",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.32.0"
 	},
@@ -24,46 +19,46 @@
 				"command": "websearch.search",
 				"title": "Web search"
 			}
-		]
-	},
-	"keybindings": [
-		{
-			"command": "websearch.search",
-			"key": "alt+s",
-			"when": "editorTextFocus"
-		}
-	],
-	"configuration": {
-		"title": "Web Search",
-		"type": "object",
-		"properties": {
-			"websearch.engines": {
-				"type": "list",
-				"default": [
-					{
-						"Name": "DuckDuckGo",
-						"URI": "duckduckgo.com/?q="
-					},
-					{
-						"Name": "Google",
-						"URI": "www.google.com/search?q="
-					},
-					{
-						"Name": "Bing",
-						"URI": "www.bing.com/search?q="
-					}
-				],
-				"description": "Search engine list and their URIs."
-			},
-			"websearch.default_engine": {
-				"type": "string",
-				"default": "DuckDuckGo",
-				"description": "The search engine to use."
-			},
-			"websearch.ac_engine": {
-				"type": "string",
-				"default": "DuckDuckGo",
-				"description": "The AutoComplete engine to use."
+		],
+		"keybindings": [
+			{
+				"command": "websearch.search",
+				"key": "alt+s",
+				"when": "editorTextFocus"
+			}
+		],
+		"configuration": {
+			"title": "Web Search",
+			"type": "object",
+			"properties": {
+				"websearch.engines": {
+					"type": "array",
+					"default": [
+						{
+							"Name": "DuckDuckGo",
+							"URI": "duckduckgo.com/?q="
+						},
+						{
+							"Name": "Google",
+							"URI": "www.google.com/search?q="
+						},
+						{
+							"Name": "Bing",
+							"URI": "www.bing.com/search?q="
+						}
+					],
+					"description": "Search engine list and their URIs."
+				},
+				"websearch.default_engine": {
+					"type": "string",
+					"default": "DuckDuckGo",
+					"description": "The search engine to use."
+				},
+				"websearch.ac_engine": {
+					"type": "string",
+					"default": "DuckDuckGo",
+					"description": "The AutoComplete engine to use."
+				}
 			}
 		}
 	},

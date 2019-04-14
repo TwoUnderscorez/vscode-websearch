@@ -15,6 +15,7 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 - Added:
 - Changed:
 - Fixed:
+  - Properly register key bindings and settings in package.json
 - Deprecated:
 - Removed:
 - Security:
