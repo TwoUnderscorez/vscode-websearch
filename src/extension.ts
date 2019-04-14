@@ -39,33 +39,5 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('"vscode-websearch" activated!');
 }
 
-export function showQuickPick() {
-	let i = 0;
-	let a = vscode.window.createQuickPick<StrItem>();
-	// a.onDidChangeValue(value => {
-	// 	if (value !== "") {
-	// 		a.items = [
-	// 			new StrItem('bbb'),
-	// 			new StrItem('ddd')
-	// 		]
-	// 	}
-	// 	else {
-	// 		a.items = [];
-	// 	}
-	// });
-	a.items = [
-		new StrItem('aaa'),
-		new StrItem('ccc')
-	];
-	a.canSelectMany = false;
-	a.enabled = true;
-	a.ignoreFocusOut = true;
-	a.placeholder = 'test123';
-	a.title = 'test title';
-	a.value = 'test value';
-	a.onDidHide(() => a.dispose());
-	a.show();
-}
-
 // this method is called when your extension is deactivated
 export function deactivate() { }
