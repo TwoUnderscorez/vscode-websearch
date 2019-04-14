@@ -12,7 +12,8 @@
 		"vscode": "^1.32.0"
 	},
 	"categories": [
-		"Other"
+		"Other",
+		"Keymaps"
 	],
 	"activationEvents": [
 		"onCommand:websearch.search"
