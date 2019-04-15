@@ -2,7 +2,7 @@
 
 All notable changes to the "vscode-websearch" extension will be documented in this file.
 
-## 1.0.3
+## 1.0.4
 
 - Added:
   - Auto-insert text selection into the search box
