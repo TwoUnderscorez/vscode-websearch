@@ -18,6 +18,7 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 ## [Unreleased]
 
 - Added:
+  - Auto-insert text selection into the search box
 - Changed:
 - Fixed:
 - Deprecated:
