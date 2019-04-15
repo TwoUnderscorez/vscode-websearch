@@ -16,15 +16,26 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 		// showQuickPick();
 		let input = vscode.window.createQuickPick<StrItem>();
+
+		const editor = vscode.window.activeTextEditor;
+		if (editor !== undefined) {
+			input.value = editor.document.getText(editor.selection);
+			if (input.value.length > 0) {
+				get_suggestions(input.value, input, extconfig);
+			}
+		}
+
 		input.onDidAccept(() => {
 			const result = input.selectedItems[0].name;
 			if (result !== undefined) {
 				execute_search(result, extconfig);
 			}
 		});
+
 		input.onDidChangeValue(value => {
 			get_suggestions(value, input, extconfig);
 		});
+
 		input.title = `Search ${extconfig.searchEngine.Name.toString()}`;
 		input.placeholder = 'Start typing to search';
 		input.onDidHide(() => input.dispose());
