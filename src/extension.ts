@@ -18,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 		let input = vscode.window.createQuickPick<StrItem>();
 
 		const editor = vscode.window.activeTextEditor;
-		if (editor !== undefined) {
+		if (editor !== undefined && extconfig.shouldInsertSelectedText) {
 			input.value = editor.document.getText(editor.selection);
 			if (input.value.length > 0) {
 				get_suggestions(input.value, input, extconfig);

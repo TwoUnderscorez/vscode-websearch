@@ -58,6 +58,11 @@
 					"type": "string",
 					"default": "DuckDuckGo",
 					"description": "The AutoComplete engine to use."
+				},
+				"websearch.insert_selected_text": {
+					"type": "boolean",
+					"default": true,
+					"description": "If there is selected text, should that selection be automatically inserted into the search box."
 				}
 			}
 		}
