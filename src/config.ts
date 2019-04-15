@@ -6,6 +6,7 @@ export class Config {
     searchEngines: Array<SearchEngine>;
     searchEngine: SearchEngine;
     acEngine: string;
+    shouldInsertSelectedText: boolean;
     constructor() {
         this.searchEngines = Array<SearchEngine>();
         this.searchEngines.push(
@@ -24,6 +25,7 @@ export class Config {
         );
         this.searchEngine = this.searchEngines[0];
         this.acEngine = 'duckduckgo';
+        this.shouldInsertSelectedText = true;
     }
 
     get_autocomplete(query: string, output: vscode.QuickPick<StrItem> | undefined): void {
@@ -55,6 +57,7 @@ export class Config {
                 break;
         }
 
+        this.shouldInsertSelectedText = config.get<boolean>("insert_selected_text", this.shouldInsertSelectedText);
     }
 }
 

@@ -2,6 +2,11 @@
 
 All notable changes to the "vscode-websearch" extension will be documented in this file.
 
+## 1.0.3
+
+- Added:
+  - Auto-insert text selection into the search box
+
 ## 1.0.1
 
 - Fixed:
@@ -20,7 +25,6 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 - Added:
 - Changed:
 - Fixed:
-  - Properly register key bindings and settings in package.json
 - Deprecated:
 - Removed:
 - Security:
