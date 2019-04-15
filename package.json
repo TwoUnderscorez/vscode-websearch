@@ -52,12 +52,21 @@
 				"websearch.default_engine": {
 					"type": "string",
 					"default": "DuckDuckGo",
-					"description": "The search engine to use."
+					"description": "The search engine to use.",
+					"examples": [
+						"DuckDuckGo",
+						"Google",
+						"Bing"
+					]
 				},
 				"websearch.ac_engine": {
 					"type": "string",
 					"default": "DuckDuckGo",
-					"description": "The AutoComplete engine to use."
+					"description": "The AutoComplete engine to use.",
+					"enum": [
+						"DuckDuckGo",
+						"Google"
+					]
 				},
 				"websearch.insert_selected_text": {
 					"type": "boolean",
