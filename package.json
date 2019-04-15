@@ -1,13 +1,19 @@
 {
+	"publisher": "TwoUnderscorez",
+	"repository": {
+		"url": "https://github.com/TwoUnderscorez/vscode-websearch",
+		"type": "GitHub"
+	},
 	"name": "vscode-websearch",
 	"displayName": "Web Search",
 	"description": "Search bar inside vscode",
-	"version": "0.0.1",
+	"version": "1.0.2",
 	"engines": {
 		"vscode": "^1.32.0"
 	},
 	"categories": [
-		"Other"
+		"Other",
+		"Keymaps"
 	],
 	"activationEvents": [
 		"onCommand:websearch.search"
