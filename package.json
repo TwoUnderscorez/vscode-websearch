@@ -79,7 +79,7 @@
 					"default": true,
 					"description": "If there is selected text, should that selection be automatically inserted into the search box."
 				},
-				"linux_base_distro": {
+				"websearch.linux_base_distro": {
 					"type": "string",
 					"description": "Set this if I can't guess your linux distro correctly",
 					"enum": [

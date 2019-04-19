@@ -1,9 +1,10 @@
-import * as os from 'os';
+import { type } from 'os';
 import { exec } from 'child_process';
 import { window } from 'vscode';
 import { Config } from "./config";
+import * as fs from "fs";
 
-const ostype: string = os.type().toLowerCase();
+const ostype: string = type().toLowerCase();
 let isLinux: boolean = false;
 
 let open_url = (url: string) => {
@@ -22,12 +23,21 @@ else if (ostype.includes('mac')) {
 }
 else if (ostype.includes('linux')) {
     open_url = (url: string) => {
-        window.showWarningMessage('Detected linux distro, still loading config...');
+        window.showWarningMessage('Your linux distro is not supported, please set websearch.linux_base_distro in the settings file.');
     };
 }
 
-function detect_linux_distro(extconfig: Config) {
+export function detect_linux_distro(extconfig: Config) {
+    let distro: string = '';
+    if (extconfig.linuxDistro !== undefined) {
+        distro = extconfig.linuxDistro.toLowerCase();
+    }
 
+    if (fs.existsSync('/etc/debian_version') || distro === 'debian') {
+        open_url = (url: string) => {
+            exec(`sensible-browser ${url}`);
+        };
+    }
 }
 
-export { open_url };
+export { open_url, ostype };

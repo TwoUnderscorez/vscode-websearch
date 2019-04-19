@@ -4,6 +4,8 @@ import * as vscode from 'vscode';
 import { execute_search, get_suggestions } from "./search";
 import * as config from "./config";
 import { StrItem } from './StrItem';
+import * as urlexec from './urlexec';
+import { url } from 'inspector';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -11,6 +13,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const extconfig = new config.Config();
 	extconfig.loadConfig();
+	if (urlexec.ostype === 'linux') {
+		urlexec.detect_linux_distro(extconfig);
+	}
 
 	let disposable = vscode.commands.registerCommand('websearch.search', () => {
 		// The code you place here will be executed every time your command is executed

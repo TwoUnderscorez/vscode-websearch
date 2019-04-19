@@ -8,15 +8,15 @@ vscode-websearch will let you execute web searches from inside vscode.
 
 ## Requirements
 
-Currently supports only Windows and Mac.
+A PC running Windowx, Linux or MacOS.
 
 ## Extension Settings
 
-There are currently no settings.
+
 
 ## Known Issues
 
-- No support for Linux yet unfortunately... We are working on that.
+
 
 ## Release Notes
 
