@@ -7,6 +7,7 @@ export class Config {
     searchEngine: SearchEngine;
     acEngine: string;
     shouldInsertSelectedText: boolean;
+    linuxUrlOpener?: string;
     constructor() {
         this.searchEngines = Array<SearchEngine>();
         this.searchEngines.push(
@@ -58,6 +59,8 @@ export class Config {
         }
 
         this.shouldInsertSelectedText = config.get<boolean>("insert_selected_text", this.shouldInsertSelectedText);
+
+        this.linuxUrlOpener = config.get<string>("linux_url_launcher");
     }
 }
 

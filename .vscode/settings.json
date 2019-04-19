@@ -16,6 +16,7 @@
         "ostype",
         "outarr",
         "urlexec",
+        "webbrowser",
         "websearch"
     ]
 }
