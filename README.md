@@ -8,11 +8,15 @@ vscode-websearch will let you execute web searches from inside vscode.
 
 ## Requirements
 
-A PC running Windowx, Linux or MacOS.
+A PC running Windows, Linux or MacOS.
 
 ## Extension Settings
 
-
+- `websearch.engines`: Search engine list and their URIs.
+- `websearch.default_engine`: The search engine to use.
+- `websearch.ac_engine`: he AutoComplete engine to use.
+- `websearch.insert_selected_text`: If there is selected text, should that selection be automatically inserted into the search box.
+- `websearch.linux_base_distro`: Set this if I can't guess your linux distro correctly
 
 ## Known Issues
 
