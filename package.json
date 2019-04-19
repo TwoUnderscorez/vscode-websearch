@@ -79,15 +79,26 @@
 					"default": true,
 					"description": "If there is selected text, should that selection be automatically inserted into the search box."
 				},
-				"websearch.linux_base_distro": {
+				"websearch.linux_url_launcher": {
 					"type": "string",
-					"description": "Set this if I can't guess your linux distro correctly",
+					"description": "Set this if I can't guess how to open a browser.",
 					"enum": [
-						"Debian"
+						"",
+						"sensible-browser",
+						"kde-open",
+						"gnome-open",
+						"xdg-open",
+						"python -m webbrowser"
 					],
 					"enumDescriptions": [
-						"(Ubuntu, Linux Mint, etc ...)"
-					]
+						"Type your browser name, ignore the error, and restart vscode",
+						"Debian (Ubuntu, Linux Mint, etc ...)",
+						"If you are using KDE",
+						"If you are using GNOME",
+						"Should be universal, might not work everywhere, try installing xdg-utils",
+						"Use python to open the default web browser"
+					],
+					"default": ""
 				}
 			}
 		}

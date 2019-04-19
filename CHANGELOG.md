@@ -23,7 +23,7 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 ## [Unreleased]
 
 - Added:
-  - Support for debian/linux
+  - Support for Linux
 - Changed:
 - Fixed:
 - Deprecated:

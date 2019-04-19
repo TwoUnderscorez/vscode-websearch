@@ -28,16 +28,19 @@ else if (ostype.includes('linux')) {
 }
 
 export function detect_linux_distro(extconfig: Config) {
-    let distro: string = '';
-    if (extconfig.linuxDistro !== undefined) {
-        distro = extconfig.linuxDistro.toLowerCase();
+    let urlOpener: string = '';
+    if (extconfig.linuxUrlOpener !== undefined && extconfig.linuxUrlOpener !== "") {
+        urlOpener = extconfig.linuxUrlOpener.toLowerCase();
     }
-
-    if (fs.existsSync('/etc/debian_version') || distro === 'debian') {
-        open_url = (url: string) => {
-            exec(`sensible-browser ${url}`);
-        };
+    else if (fs.existsSync('/etc/debian_version')) {
+        urlOpener = 'sensible-browser';
     }
+    else {
+        urlOpener = 'xdg-open';
+    }
+    open_url = (url: string) => {
+        exec(`${urlOpener} ${url}`);
+    };
 }
 
 export { open_url, ostype };
