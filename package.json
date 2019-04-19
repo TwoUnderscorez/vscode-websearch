@@ -30,7 +30,7 @@
 			{
 				"command": "websearch.search",
 				"key": "alt+s",
-				"when": "editorTextFocus"
+				"when": ""
 			}
 		],
 		"configuration": {
