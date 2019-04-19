@@ -6,6 +6,9 @@ vscode-websearch will let you execute web searches from inside vscode.
 - Search with Google, DuckDuckGo, Bing or easily add your own favorite search engine!
 - AutoComplete from Google and DuckDuckGo. More coming soon!
 
+![Executing a search](images/ddg-bang.gif)
+![Adding a search engine](images/websearch-add-engine.gif)
+
 ## Requirements
 
 A PC running Windows, Linux or MacOS.
