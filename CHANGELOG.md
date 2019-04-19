@@ -2,6 +2,13 @@
 
 All notable changes to the "vscode-websearch" extension will be documented in this file.
 
+## 1.1.1
+
+- Added:
+  - Support for Linux
+- Changed:
+  - Alt+s now works anytime
+
 ## 1.0.4
 
 - Added:
@@ -23,7 +30,6 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 ## [Unreleased]
 
 - Added:
-  - Support for Linux
 - Changed:
 - Fixed:
 - Deprecated:
