@@ -5,10 +5,10 @@
 		"type": "GitHub"
 	},
 	"name": "vscode-websearch",
-    "displayName": "Web Search",
-    "icon": "images/icon.png",
+	"displayName": "Web Search",
+	"icon": "images/icon.png",
 	"description": "Search bar inside vscode",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"engines": {
 		"vscode": "^1.32.0"
 	},
