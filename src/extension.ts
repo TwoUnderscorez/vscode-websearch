@@ -14,7 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
 	const extconfig = new config.Config();
 	extconfig.loadConfig();
 	if (urlexec.ostype === 'linux') {
-		urlexec.detect_linux_distro(extconfig);
+		urlexec.detect_linux_url_launcher(extconfig);
 	}
 
 	let disposable = vscode.commands.registerCommand('websearch.search', () => {

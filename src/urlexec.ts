@@ -27,7 +27,7 @@ else if (ostype.includes('linux')) {
     };
 }
 
-export function detect_linux_distro(extconfig: Config) {
+export function detect_linux_url_launcher(extconfig: Config) {
     let urlOpener: string = '';
     if (extconfig.linuxUrlOpener !== undefined && extconfig.linuxUrlOpener !== "") {
         urlOpener = extconfig.linuxUrlOpener.toLowerCase();
