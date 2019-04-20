@@ -11,14 +11,14 @@ let open_url = (url: string) => {
     window.showErrorMessage(`${ostype} not supported.`);
 };
 
-if (ostype.includes('win')) {
-    open_url = (url: string) => {
-        exec(`start https://${url}`);
-    };
-}
-else if (ostype.includes('mac')) {
+if (ostype.includes('darwin')) {
     open_url = (url: string) => {
         exec(`open https://${url}`);
+    };
+}
+else if (ostype.includes('win')) {
+    open_url = (url: string) => {
+        exec(`start https://${url}`);
     };
 }
 else if (ostype.includes('linux')) {
