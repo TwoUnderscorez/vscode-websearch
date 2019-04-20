@@ -39,7 +39,7 @@ export function detect_linux_distro(extconfig: Config) {
         urlOpener = 'xdg-open';
     }
     open_url = (url: string) => {
-        exec(`${urlOpener} ${url}`);
+        exec(`${urlOpener} https://${url}`);
     };
 }
 
