@@ -5,7 +5,8 @@
 		"type": "GitHub"
 	},
 	"name": "vscode-websearch",
-	"displayName": "Web Search",
+    "displayName": "Web Search",
+    "icon": "images/icon.png",
 	"description": "Search bar inside vscode",
 	"version": "1.1.1",
 	"engines": {
