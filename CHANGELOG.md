@@ -2,6 +2,13 @@
 
 All notable changes to the "vscode-websearch" extension will be documented in this file.
 
+## 1.2.0
+
+- Added:
+  - Icon
+- Fixed:
+  - MacOS support
+
 ## 1.1.1
 
 - Added:
