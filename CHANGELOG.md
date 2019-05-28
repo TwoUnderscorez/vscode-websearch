@@ -39,6 +39,7 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 - Added:
 - Changed:
 - Fixed:
+  - Properly encoding special characters.
 - Deprecated:
 - Removed:
 - Security:

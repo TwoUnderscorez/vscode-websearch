@@ -9,7 +9,7 @@ export function duckduckgo_ac(query: string, output: vscode.QuickPick<StrItem>):
         method: 'GET',
         hostname: 'duckduckgo.com',
         port: 443,
-        path: `/ac/?q=${encodeURI(query)}`
+        path: `/ac/?q=${encodeURIComponent(query)}`
     }, res => {
         let resBody = '';
         res.setEncoding('UTF-8');
@@ -48,7 +48,7 @@ export function google_ac(query: string, output: vscode.QuickPick<StrItem>): voi
         method: 'GET',
         hostname: 'www.google.com',
         port: 443,
-        path: `/complete/search?q=${encodeURI(query)}&client=psy-ab`
+        path: `/complete/search?q=${encodeURIComponent(query)}&client=psy-ab`
     }, res => {
         let resBody = '';
         res.setEncoding('UTF-8');
