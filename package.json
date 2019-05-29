@@ -52,6 +52,10 @@
 						{
 							"Name": "Bing",
 							"URI": "www.bing.com/search?q="
+						},
+						{
+							"Name": "AOL",
+							"URI": "search.aol.com/aol/search?q="
 						}
 					],
 					"description": "Search engine list and their URIs."

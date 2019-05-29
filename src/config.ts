@@ -22,6 +22,10 @@ export class Config {
             {
                 "Name": "Bing",
                 "URI": "www.bing.com/search?q="
+            },
+            {
+                "Name": "AOL",
+                "URI": "search.aol.com/aol/search?q="
             }
         );
         this.searchEngine = this.searchEngines[0];
