@@ -106,3 +106,37 @@ export function aol_ac(query: string, output: vscode.QuickPick<StrItem>): void {
 
     req.end();
 }
+
+
+export function bing_ac(query: string, output: vscode.QuickPick<StrItem> | undefined): void {
+    let req = https.request({
+        method: 'GET',
+        hostname: 'www.bing.com',
+        port: 443,
+        path: `/AS/Suggestions?qry=${encodeURIComponent(query)}&cvid=${(Math.floor(Math.random() * 10 ** 20) + 10 ** 19).toString(16) + (Math.floor(Math.random() * 10 ** 20) + 10 ** 19).toString(16)}`
+        // cvid is just a random big number in hex base
+    }, res => {
+        let resBody = '';
+        res.setEncoding('UTF-8');
+        res.on('data', chunk => resBody += chunk);
+        res.on('end', () => {
+            const el = '';
+            var data: any = resBody.match
+                (/<div class="sa_tm">.*\n *<strong>.*<\/strong>/g);
+            console.log(data);
+
+            // let outarr: Array<StrItem> = new Array<StrItem>();
+            // outarr = inarr.map(i => new StrItem(i.key));
+
+            // if (outarr.length < 1) {
+            //     outarr.push(new StrItem(query, 'No suggestions available'))
+            // }
+            // else if (query !== outarr[0].text) {
+            //     outarr.splice(0, 0, new StrItem(query));
+            // }
+            // output.items = outarr;
+        });
+    });
+
+    req.end();
+}
