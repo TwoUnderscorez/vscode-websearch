@@ -5,7 +5,6 @@ import { execute_search, get_suggestions } from "./search";
 import * as config from "./config";
 import { StrItem } from './StrItem';
 import * as urlexec from './urlexec';
-import { url } from 'inspector';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
