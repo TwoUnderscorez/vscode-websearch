@@ -5,8 +5,8 @@
 		"type": "GitHub"
 	},
 	"name": "vscode-websearch",
-    "displayName": "Web Search",
-    "icon": "images/icon.png",
+	"displayName": "Web Search",
+	"icon": "images/icon.png",
 	"description": "Search bar inside vscode",
 	"version": "1.1.1",
 	"engines": {
@@ -72,7 +72,8 @@
 					"description": "The AutoComplete engine to use.",
 					"enum": [
 						"DuckDuckGo",
-						"Google"
+						"Google",
+						"AOL"
 					]
 				},
 				"websearch.insert_selected_text": {

@@ -37,6 +37,8 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 ## [Unreleased]
 
 - Added:
+  - AutoComplete Support:
+    - AOL.
 - Changed:
 - Fixed:
   - Properly encoding special characters.

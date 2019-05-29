@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { StrItem } from './StrItem';
-import { duckduckgo_ac, google_ac } from './autocomplete';
+import * as ac from './autocomplete';
 import { SearchEngine } from "./SearchEngine";
 export class Config {
     searchEngines: Array<SearchEngine>;
@@ -48,10 +48,13 @@ export class Config {
         this.acEngine = config.get<string>("ac_engine", this.acEngine);
         switch (this.acEngine.toLowerCase()) {
             case 'duckduckgo':
-                this.get_autocomplete = duckduckgo_ac;
+                this.get_autocomplete = ac.duckduckgo_ac;
                 break;
             case 'google':
-                this.get_autocomplete = google_ac;
+                this.get_autocomplete = ac.google_ac;
+                break;
+            case 'aol':
+                this.get_autocomplete = ac.aol_ac;
                 break;
             default:
                 this.get_autocomplete(this.acEngine, undefined);
