@@ -67,7 +67,8 @@
 					"examples": [
 						"DuckDuckGo",
 						"Google",
-						"Bing"
+						"Bing",
+						"AOL"
 					]
 				},
 				"websearch.ac_engine": {
