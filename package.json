@@ -52,6 +52,10 @@
 						{
 							"Name": "Bing",
 							"URI": "www.bing.com/search?q="
+						},
+						{
+							"Name": "AOL",
+							"URI": "search.aol.com/aol/search?q="
 						}
 					],
 					"description": "Search engine list and their URIs."
@@ -63,7 +67,8 @@
 					"examples": [
 						"DuckDuckGo",
 						"Google",
-						"Bing"
+						"Bing",
+						"AOL"
 					]
 				},
 				"websearch.ac_engine": {
@@ -72,7 +77,8 @@
 					"description": "The AutoComplete engine to use.",
 					"enum": [
 						"DuckDuckGo",
-						"Google"
+						"Google",
+						"AOL"
 					]
 				},
 				"websearch.insert_selected_text": {
