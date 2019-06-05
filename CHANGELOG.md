@@ -44,6 +44,7 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 ## [Unreleased]
 
 - Added:
+  - A lot of search engines
 - Changed:
 - Fixed:
 - Deprecated:

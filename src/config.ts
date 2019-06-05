@@ -26,6 +26,30 @@ export class Config {
             {
                 "Name": "AOL",
                 "URI": "search.aol.com/aol/search?q="
+            },
+            {
+                "Name": "Yahoo",
+                "URI": "search.yahoo.com/search?&p="
+            },
+            {
+                "Name": "Ask",
+                "URI": "www.ask.com/web?q="
+            },
+            {
+                "Name": "Yandex.com",
+                "URI": "`yandex.com/search/?text="
+            },
+            {
+                "Name": "Yandex.ru",
+                "URI": "`yandex.ru/search/?text="
+            },
+            {
+                "Name": "Yandex.ua",
+                "URI": "`yandex.ua/search/?text="
+            },
+            {
+                "Name": "StartPage",
+                "URI": "`www.startpage.com/do/search?query="
             }
         );
         this.searchEngine = this.searchEngines[0];
