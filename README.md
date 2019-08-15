@@ -20,6 +20,7 @@ A PC running Windows, Linux or MacOS.
 - `websearch.ac_engine`: he AutoComplete engine to use.
 - `websearch.insert_selected_text`: If there is selected text, should that selection be automatically inserted into the search box.
 - `websearch.linux_url_launcher`: Set this if I can't guess how to open a browser.
+- `websearch.tlds`: Set the TLD to use (e.g. for Google, but will work with any search engine that a domain over multiple TLDs.)
 
 ## Known Issues
 
