@@ -2,6 +2,12 @@
 
 All notable changes to the "vscode-websearch" extension will be documented in this file.
 
+## 1.4.0
+
+- Added:
+  - A lot of search engines
+  - Add a way to change the TLD of any search engine (also AC)
+
 ## 1.3.0
 
 - Added:
@@ -44,7 +50,6 @@ All notable changes to the "vscode-websearch" extension will be documented in th
 ## [Unreleased]
 
 - Added:
-  - A lot of search engines
 - Changed:
 - Fixed:
 - Deprecated:

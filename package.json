@@ -43,43 +43,35 @@
 					"default": [
 						{
 							"Name": "DuckDuckGo",
-							"URI": "duckduckgo.com/?q="
+							"URI": "duckduckgo.$#$/?q="
 						},
 						{
 							"Name": "Google",
-							"URI": "www.google.com/search?q="
+							"URI": "www.google.$#$/search?q="
 						},
 						{
 							"Name": "Bing",
-							"URI": "www.bing.com/search?q="
+							"URI": "www.bing.$#$/search?q="
 						},
 						{
 							"Name": "AOL",
-							"URI": "search.aol.com/aol/search?q="
+							"URI": "search.aol.$#$/aol/search?q="
 						},
 						{
 							"Name": "Yahoo",
-							"URI": "search.yahoo.com/search?p="
+							"URI": "search.yahoo.$#$/search?&p="
 						},
 						{
 							"Name": "Ask",
-							"URI": "www.ask.com/web?q="
+							"URI": "www.ask.$#$/web?q="
 						},
 						{
-							"Name": "Yandex.com",
-							"URI": "yandex.com/search/?text="
-						},
-						{
-							"Name": "Yandex.ru",
-							"URI": "yandex.ru/search/?text="
-						},
-						{
-							"Name": "Yandex.ua",
-							"URI": "yandex.ua/search/?text="
+							"Name": "Yandex",
+							"URI": "yandex.$#$/search/?text="
 						},
 						{
 							"Name": "StartPage",
-							"URI": "www.startpage.com/do/search?query="
+							"URI": "`www.startpage.$#$/do/search?query="
 						}
 					],
 					"description": "Search engine list and their URIs."
@@ -95,9 +87,7 @@
 						"AOL",
 						"Yahoo",
 						"Ask",
-						"Yandex.com",
-						"Yandex.ru",
-						"Yandex.ua",
+						"Yandex",
 						"StartPage"
 					]
 				},
@@ -115,6 +105,20 @@
 					"type": "boolean",
 					"default": true,
 					"description": "If there is selected text, should that selection be automatically inserted into the search box."
+				},
+				"websearch.tlds": {
+					"type": "object",
+					"default": {
+						"default": "com"
+					},
+					"examples": [
+						{
+							"default": "com",
+							"yandex": "ua",
+							"google": "com.ua"
+						}
+					],
+					"description": "An object to assign a search engine a TLD. Keys MUST BE all lower case."
 				},
 				"websearch.linux_url_launcher": {
 					"type": "string",

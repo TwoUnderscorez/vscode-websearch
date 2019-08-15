@@ -3,6 +3,7 @@ import { StrItem } from './StrItem';
 import * as https from 'https';
 import { DuckDuckGoPhrase } from './DuckDuckGoPhrase';
 import { AOLPhrase } from "./AOLPhrase";
+import { Config } from './config';
 
 
 export function duckduckgo_ac(query: string, output: vscode.QuickPick<StrItem>): void {
@@ -45,9 +46,18 @@ function decode(str: string) {
 }
 
 export function google_ac(query: string, output: vscode.QuickPick<StrItem>): void {
+    let conf = Config.get_config();
+    let googleHost = 'www.google.$#$'.replace(
+        "$#$",
+        conf.get_search_engine_tld(
+            {
+                "Name": "Google",
+                URI: ""
+            }
+        ));
     let req = https.request({
         method: 'GET',
-        hostname: 'www.google.com',
+        hostname: googleHost,
         port: 443,
         path: `/complete/search?q=${encodeURIComponent(query)}&client=psy-ab`
     }, res => {

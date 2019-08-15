@@ -5,12 +5,13 @@ import { execute_search, get_suggestions } from "./search";
 import * as config from "./config";
 import { StrItem } from './StrItem';
 import * as urlexec from './urlexec';
+import { Config } from './config';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Activating "vscode-websearch"...');
 
-	const extconfig = new config.Config();
+	const extconfig = Config.get_config();
 	extconfig.loadConfig();
 	if (urlexec.ostype === 'linux') {
 		urlexec.detect_linux_url_launcher(extconfig);

@@ -2,54 +2,52 @@ import * as vscode from "vscode";
 import { StrItem } from './StrItem';
 import * as ac from './autocomplete';
 import { SearchEngine } from "./SearchEngine";
+import { setFlagsFromString } from "v8";
 export class Config {
+    static conf: Config;
     searchEngines: Array<SearchEngine>;
     searchEngine: SearchEngine;
     acEngine: string;
+    tlds: any;
     shouldInsertSelectedText: boolean;
     linuxUrlOpener?: string;
-    constructor() {
+    private constructor() {
         this.searchEngines = Array<SearchEngine>();
+        this.tlds = {
+            "default": "com"
+        };
         this.searchEngines.push(
             {
                 "Name": "DuckDuckGo",
-                "URI": "duckduckgo.com/?q="
+                "URI": "duckduckgo.$#$/?q="
             },
             {
                 "Name": "Google",
-                "URI": "www.google.com/search?q="
+                "URI": "www.google.$#$/search?q="
             },
             {
                 "Name": "Bing",
-                "URI": "www.bing.com/search?q="
+                "URI": "www.bing.$#$/search?q="
             },
             {
                 "Name": "AOL",
-                "URI": "search.aol.com/aol/search?q="
+                "URI": "search.aol.$#$/aol/search?q="
             },
             {
                 "Name": "Yahoo",
-                "URI": "search.yahoo.com/search?&p="
+                "URI": "search.yahoo.$#$/search?&p="
             },
             {
                 "Name": "Ask",
-                "URI": "www.ask.com/web?q="
+                "URI": "www.ask.$#$/web?q="
             },
             {
-                "Name": "Yandex.com",
-                "URI": "`yandex.com/search/?text="
-            },
-            {
-                "Name": "Yandex.ru",
-                "URI": "`yandex.ru/search/?text="
-            },
-            {
-                "Name": "Yandex.ua",
-                "URI": "`yandex.ua/search/?text="
+                "Name": "Yandex",
+                "URI": "yandex.$#$/search/?text="
             },
             {
                 "Name": "StartPage",
-                "URI": "`www.startpage.com/do/search?query="
+                "URI": "`www.startpage.$#$/do/search?query="
             }
         );
         this.searchEngine = this.searchEngines[0];
@@ -57,19 +55,43 @@ export class Config {
         this.shouldInsertSelectedText = true;
     }
 
+    static get_config() {
+        if (Config.conf === undefined) {
+            Config.conf = new Config();
+        }
+        return Config.conf;
+    }
+
     get_autocomplete(query: string, output: vscode.QuickPick<StrItem> | undefined): void {
         vscode.window.showErrorMessage(`AutoComplete Error: ${query} not supported`);
     }
 
+    get_search_engine_tld(se: SearchEngine): string {
+        if (this.tlds.hasOwnProperty(se.Name.toLowerCase())) {
+            return this.tlds[se.Name.toLowerCase()] as string;
+        }
+        else {
+            return this.tlds["default"] as string;
+        }
+    }
+
     loadConfig() {
         let config = vscode.workspace.getConfiguration("websearch");
+
+        this.tlds = config.get<Object>("tlds", this.tlds);
 
         this.searchEngines = config.get<Array<SearchEngine>>("engines", this.searchEngines);
 
         let searchEngine = config.get<string>("default_engine", this.searchEngines[0].Name).toLowerCase();
         this.searchEngines.forEach(element => {
             if (element.Name.toLowerCase() === searchEngine) {
-                this.searchEngine = element;
+                this.searchEngine = {
+                    "Name": element.Name,
+                    "URI": element.URI.replace(
+                        "$#$",
+                        this.get_search_engine_tld(element)
+                    )
+                };
             }
         });
 
