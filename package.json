@@ -74,12 +74,12 @@
 							"URI": "`www.startpage.$#$/do/search?query="
 						}
 					],
-					"description": "Search engine list and their URIs."
+					"description": "Search engine list and their URIs. $#$ is replaced with 'com' by default, you can changed that via 'websearch.tlds' for individual search engines. (Cace insensitive)"
 				},
 				"websearch.default_engine": {
 					"type": "string",
 					"default": "DuckDuckGo",
-					"description": "The search engine to use.",
+					"description": "The search engine to use. (Cace insensitive)",
 					"examples": [
 						"DuckDuckGo",
 						"Google",
@@ -118,7 +118,7 @@
 							"google": "com.ua"
 						}
 					],
-					"description": "An object to assign a search engine a TLD. Keys MUST BE all lower case."
+					"description": "An object to assign a search engine a TLD. Keys (names) MUST BE all in LOWER case."
 				},
 				"websearch.linux_url_launcher": {
 					"type": "string",
