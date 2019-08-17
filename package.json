@@ -8,7 +8,7 @@
 	"displayName": "Web Search",
 	"icon": "images/icon.png",
 	"description": "Search bar inside vscode",
-	"version": "1.1.1",
+	"version": "1.3.0",
 	"engines": {
 		"vscode": "^1.32.0"
 	},
